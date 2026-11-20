@@ -1,0 +1,59 @@
+=======================================================
+SMART AQUAGUARD: COMPUTER VISION SUBSYSTEM PROGRESS REPORT
+Generated: 2026-10-17 10:45:04
+=======================================================
+
+1. TEST RUN PARAMETERS
+-------------------------------------------------------
+Model Weights File    : best.pt
+Input Image           : Shrimp with Feeds - 85.jpg
+Confidence Threshold  : 50.0%
+
+2. DETECTION PERFORMANCE SUMMARY
+-------------------------------------------------------
+Total Objects Found   : 29
+Highest Confidence    : 97.49%
+Lowest Confidence     : 52.07%
+Average Confidence    : 76.35%
+
+Class Breakdown:
+  - Class '1': 19 detected
+  - Class '3': 10 detected
+
+-------------------------------------------------------
+3. DETAILED OBJECT DETECTIONS (SORTED BY CONFIDENCE)
+-------------------------------------------------------
+Object #01: Class '1' | Confidence: 97.49%
+Object #02: Class '1' | Confidence: 95.54%
+Object #03: Class '1' | Confidence: 93.09%
+Object #04: Class '1' | Confidence: 93.04%
+Object #05: Class '1' | Confidence: 92.85%
+Object #06: Class '1' | Confidence: 92.59%
+Object #07: Class '1' | Confidence: 91.20%
+Object #08: Class '1' | Confidence: 90.58%
+Object #09: Class '1' | Confidence: 89.66%
+Object #10: Class '1' | Confidence: 88.92%
+Object #11: Class '1' | Confidence: 88.00%
+Object #12: Class '1' | Confidence: 86.79%
+Object #13: Class '1' | Confidence: 79.78%
+Object #14: Class '1' | Confidence: 78.59%
+Object #15: Class '1' | Confidence: 78.32%
+Object #16: Class '3' | Confidence: 76.20%
+Object #17: Class '1' | Confidence: 70.35%
+Object #18: Class '3' | Confidence: 70.04%
+Object #19: Class '1' | Confidence: 69.95%
+Object #20: Class '1' | Confidence: 68.71%
+Object #21: Class '3' | Confidence: 64.67%
+Object #22: Class '3' | Confidence: 63.75%
+Object #23: Class '1' | Confidence: 62.97%
+Object #24: Class '3' | Confidence: 57.63%
+Object #25: Class '3' | Confidence: 57.31%
+Object #26: Class '3' | Confidence: 56.53%
+Object #27: Class '3' | Confidence: 53.93%
+Object #28: Class '3' | Confidence: 53.72%
+Object #29: Class '3' | Confidence: 52.07%
+
+=======================================================
+Annotated Image Exported to: result_annotated.jpg
+Report Exported to         : progress_report.txt
+=======================================================

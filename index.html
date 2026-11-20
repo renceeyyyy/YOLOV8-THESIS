@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart AquaGuard | Thesis Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-icon">💧</span> Smart AquaGuard
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#parameters">Parameters</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#team">Team</a></li>
+        </ul>
+        <a href="dashboard/dashboard.html" class="nav-btn">Open Dashboard</a>
+    </nav>
+
+    <header class="hero" id="hero">
+        <div class="hero-content">
+            <div class="badge">
+                <span class="dot"></span> BS Computer Engineering Thesis — Colegio de Muntinlupa
+            </div>
+            <h1>Smart AquaGuard</h1>
+            <h2>IoT-Enabled Water Quality Monitoring & Control</h2>
+            <p>With YOLOv8-Based Feed and Shrimp Waste Detection for Biofloc Production in Shrimp Aquaculture</p>
+            <div class="scroll-indicator">SCROLL &darr;</div>
+            <div class="cta-buttons">
+                <a href="dashboard/dashboard.html" class="btn-primary">Try Now — Open Dashboard</a>
+                <a href="#about" class="btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="light-section split-section abstract-container">
+        <div class="abstract-text">
+            <div class="section-badge">ABSTRACT</div>
+            <h2>Automated Shrimp Pond Management Through IoT & AI</h2>
+            <p>Smart AquaGuard is an IoT-based automated monitoring and control system designed to enhance shrimp aquaculture management through sustainable, data-driven, and minimized supervised operations.</p>
+            <p>The system integrates real-time water quality monitoring, sensor-based threshold actuation, and server-driven YOLOv8-based feed and waste detection to optimize environmental conditions and reduce human intervention.</p>
+            <p>Using an ESP32 microcontroller, built-in camera, WiFi communication, and a cloud server — the system enables automated corrective responses such as aeration, controlled water exchange, and transfer of collected feed waste into a biofloc reservoir for reuse.</p>
+            <div class="tags">
+                <span>IoT</span><span>Shrimp Aquaculture</span><span>Biofloc</span><span>YOLOv8</span><span>ESP32</span><span>Machine Learning</span>
+            </div>
+        </div>
+        <div class="team-card">
+            <div class="card-badge">RESEARCH INSTITUTION</div>
+            <h3>Colegio de Muntinlupa</h3>
+            <p class="sub">Computer Engineering Department</p>
+            <hr>
+            <div class="researchers">
+                <p>RESEARCHERS</p>
+                <div class="person"><span>Baldesco, Lorence</span> <span>20231020584</span></div>
+                <div class="person"><span>Dela Cruz, Sherwin V.</span> <span>20210105093</span></div>
+                <div class="person"><span>Domingo, Cedric Nicolas H.</span> <span>20221020084</span></div>
+            </div>
+            <div class="adviser">
+                <div class="adviser-icon">👨‍🏫</div>
+                <div>
+                    <strong>Engr. Ricrey E. Marquez, MSCS, PCpE</strong><br>
+                    <small>Research Adviser</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="parameters" class="light-section center-text">
+        <div class="section-badge">MONITORED PARAMETERS</div>
+        <h2>Water Quality Parameters</h2>
+        <p class="section-desc">Smart AquaGuard continuously monitors these critical parameters to keep shrimp in optimal conditions</p>
+        
+        <div class="card-grid parameters-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 800px; margin: 0 auto;">
+            <div class="card">
+                <div class="icon">🧪</div>
+                <h3>pH Level</h3>
+                <span class="ideal">Ideal: 7.5 - 8.5</span>
+                <p>Monitored via pH sensor, auto-corrected by aerator</p>
+            </div>
+            <div class="card">
+                <div class="icon">🌡️</div>
+                <h3>Temperature</h3>
+                <span class="ideal">Ideal: 28 - 32 °C</span>
+                <p>Tracked continuously, triggers cooling/heating response</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="light-section split-section problem-objectives">
+        <div class="problem-container">
+            <div class="section-badge">THE PROBLEM</div>
+            <h2>Statement of the Problem</h2>
+            <p class="section-desc">Maintaining a clean and well-managed water environment is critical for shrimp survival and production. Current systems fall short in key areas:</p>
+            
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="icon warning-icon">⚠️</div>
+                    <p>Existing systems only monitor water quality — they don't automatically correct it</p>
+                </div>
+                <div class="problem-card">
+                    <div class="icon blind-icon">🚫</div>
+                    <p>No detection of uneaten feed waste, leading to ammonia spikes</p>
+                </div>
+                <div class="problem-card">
+                    <div class="icon manual-icon">👤</div>
+                    <p>Manual intervention still required even in intensive farming setups</p>
+                </div>
+                <div class="problem-card">
+                    <div class="icon data-icon">📉</div>
+                    <p>Poor or fragmented data visualization for farm operators</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="objectives-container">
+            <div class="section-badge">OUR GOALS</div>
+            <h2>Objectives of the Study</h2>
+            <p class="section-desc">Smart AquaGuard was developed to:</p>
+            
+            <div class="objectives-list">
+                <div class="objective-item">
+                    <div class="number">1</div>
+                    <p>Automatically correct water parameters (pH and temperature) using IoT actuators</p>
+                </div>
+                <div class="objective-item">
+                    <div class="number">2</div>
+                    <p>Detect feed waste and shrimp waste in real time using YOLOv8 computer vision</p>
+                </div>
+                <div class="objective-item">
+                    <div class="number">3</div>
+                    <p>Transfer detected feed waste to a biofloc reservoir via suction pump for reuse</p>
+                </div>
+                <div class="objective-item">
+                    <div class="number">4</div>
+                    <p>Transmit all sensor data and detection results to a cloud dashboard via WiFi</p>
+                </div>
+                <div class="objective-item">
+                    <div class="number">5</div>
+                    <p>Compare shrimp growth, mortality, and water stability between automated vs. manual setups</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="light-section center-text">
+        <div class="section-badge">SYSTEM CAPABILITIES</div>
+        <h2>System Features</h2>
+        <p class="section-desc">Click a card to explore each feature</p>
+
+        <div class="card-grid features-grid">
+            <div class="card feature-card">
+                <div class="icon">📊</div>
+                <h3>IoT Water Quality Sensors</h3>
+                <ul>
+                    <li>pH sensor — monitors acidity/alkalinity</li>
+                    <li>Temperature sensor — tracks thermal conditions</li>
+                    <li>ESP32 microcontroller collects and transmits all data via WiFi</li>
+                </ul>
+            </div>
+            <div class="card feature-card">
+                <div class="icon">📷</div>
+                <h3>YOLOv8 Feed Waste Detection</h3>
+                <ul>
+                    <li>ESP32-CAM captures real-time pond surface images</li>
+                    <li>YOLOv8 classifies: clear / turbid / feed waste / shrimp waste</li>
+                    <li>Achieves high precision, recall, and F1-score</li>
+                    <li>Triggers suction pump when feed waste is detected</li>
+                    <li>Processed on cloud server (not on ESP32)</li>
+                </ul>
+            </div>
+            <div class="card feature-card">
+                <div class="icon">⚙️</div>
+                <h3>Automated Correction System</h3>
+                <ul>
+                    <li>Aerator activated when pH or oxygen is out of range</li>
+                    <li>Water exchange pump triggered for temperature correction</li>
+                    <li>Suction pump transfers feed waste to biofloc reservoir</li>
+                    <li>Cyber-Physical System (CPS) theory applied for automation</li>
+                    <li>Reduces manual labor and human intervention</li>
+                </ul>
+            </div>
+            <div class="card feature-card">
+                <div class="icon">♻️</div>
+                <h3>Biofloc Reservoir Integration</h3>
+                <ul>
+                    <li>Collected feed waste transferred to biofloc reservoir</li>
+                    <li>Biofloc converts organic waste into microbial biomass</li>
+                    <li>Serves as a nutritious protein source for shrimp</li>
+                    <li>Reduces ammonia buildup and water pollution</li>
+                    <li>Supports sustainable, low-waste aquaculture</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="dark-section center-text">
+        <div class="section-badge dark-badge">PROCESS FLOW</div>
+        <h2>How Smart AquaGuard Works</h2>
+        
+        <div class="card-grid process-grid">
+            <div class="process-card">
+                <div class="icon">🗄️</div>
+                <span class="step-num">01</span>
+                <h3>Sensor Data Collection</h3>
+                <p>ESP32 collects pH and temperature readings from IoT sensors placed in the shrimp pond.</p>
+            </div>
+            <div class="process-card">
+                <div class="icon">📸</div>
+                <span class="step-num">02</span>
+                <h3>Camera Feed Capture</h3>
+                <p>ESP32-CAM continuously captures images of the pond surface and transmits them to the cloud server via WiFi.</p>
+            </div>
+            <div class="process-card">
+                <div class="icon">🧠</div>
+                <span class="step-num">03</span>
+                <h3>YOLOv8 Detection</h3>
+                <p>The cloud server runs YOLOv8 to classify the pond surface: clear, turbid, feed waste, or shrimp waste.</p>
+            </div>
+            <div class="process-card">
+                <div class="icon">⚙️</div>
+                <span class="step-num">04</span>
+                <h3>Automated Correction</h3>
+                <p>If parameters exceed thresholds, actuators (aerator, pumps) are triggered automatically to restore ideal conditions.</p>
+            </div>
+            <div class="process-card">
+                <div class="icon">🔄</div>
+                <span class="step-num">05</span>
+                <h3>Biofloc Transfer</h3>
+                <p>Detected feed waste is suctioned and transferred to the biofloc reservoir for reuse as a sustainable shrimp feed source.</p>
+            </div>
+            <div class="process-card">
+                <div class="icon">💻</div>
+                <span class="step-num">06</span>
+                <h3>Dashboard Visualization</h3>
+                <p>All data — sensor readings and detection results — are displayed on the cloud monitoring dashboard.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="light-section center-text">
+        <div class="section-badge">THE TEAM</div>
+        <h2>Researchers & Adviser</h2>
+        
+        <div class="team-grid">
+            <div class="card team-member">
+                <div class="initials-icon">BL</div>
+                <h3>Baldesco, Lorence</h3>
+                <span class="student-id">20231020584</span>
+                <p class="major">BS Computer Engineering</p>
+            </div>
+            <div class="card team-member">
+                <div class="initials-icon">DC</div>
+                <h3>Dela Cruz, Sherwin V.</h3>
+                <span class="student-id">20210105093</span>
+                <p class="major">BS Computer Engineering</p>
+            </div>
+            <div class="card team-member">
+                <div class="initials-icon">DN</div>
+                <h3>Domingo, Cedric Nicolas H.</h3>
+                <span class="student-id">20221020084</span>
+                <p class="major">BS Computer Engineering</p>
+            </div>
+        </div>
+
+        <div class="card adviser-card">
+            <div class="initials-icon adviser-initials">👨‍🏫</div>
+            <h3>Engr. Ricrey E. Marquez, MSCS, PCpE</h3>
+            <span class="student-id">Research Adviser</span>
+        </div>
+
+        <div class="university-footer">
+            <p>A Bachelor of Science in Computer Engineering thesis project developed at:</p>
+            <strong>Colegio de Muntinlupa — Computer Engineering Department</strong>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <h2>Ready to see the dashboard?</h2>
+        <a href="dashboard/dashboard.html" class="btn-primary large-btn">Open Dashboard</a>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

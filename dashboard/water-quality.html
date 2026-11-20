@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Quality — Smart AquaGuard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon">💧</div>
+                <div class="logo-text">Smart<br>AquaGuard</div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">⊞</span> <span class="nav-label">Overview</span>
+                </a>
+                <a href="water-quality.html" class="nav-item active">
+                    <span class="nav-icon">💧</span> <span class="nav-label">Water Quality</span>
+                </a>
+                <a href="feed-detection.html" class="nav-item">
+                    <span class="nav-icon">📷</span> <span class="nav-label">Feed Detection</span>
+                </a>
+                <a href="shrimp-metrics.html" class="nav-item">
+                    <span class="nav-icon">📊</span> <span class="nav-label">Shrimp Metrics</span>
+                </a>
+                <a href="biofloc-status.html" class="nav-item">
+                    <span class="nav-icon">♻️</span> <span class="nav-label">Biofloc Status</span>
+                </a>
+                <a href="alerts.html" class="nav-item">
+                    <span class="nav-icon">🔔</span> <span class="nav-label">Alerts</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="../index.html" class="nav-item">
+                    <span class="nav-icon">←</span> <span class="nav-label">Back to Home</span>
+                </a>
+                <a href="#" class="nav-item" id="collapseBtn">
+                    <span class="nav-icon">≡</span> <span class="nav-label">Collapse</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-titles">
+                    <h1>Water Quality</h1>
+                    <p>Real-time sensor readings from ESP32</p>
+                </div>
+                <div class="header-status">
+                    <span class="status-badge"><span class="dot"></span> System Online</span>
+                    <span class="current-date" id="currentDate">Sun, Nov 15</span>
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+                <div class="section-header-row">
+                    <div>
+                        <h2>Water Quality Monitoring</h2>
+                        <p>Real-time sensor readings from ESP32 — pH and Temperature</p>
+                    </div>
+                    <span class="status-badge"><span class="dot"></span> Live Sensors</span>
+                </div>
+
+                <div class="section-title-row">
+                    <h3>Live Water Parameters</h3>
+                    <span class="last-updated">Last updated: Waiting...</span>
+                </div>
+
+                <div class="parameters-row">
+                    <div class="param-card">
+                        <div class="param-header">
+                            <span>🧪 pH Sensor</span>
+                            <span class="badge-normal"><span class="dot white-dot"></span> <span class="param-status">Normal (7.5 – 8.5)</span></span>
+                        </div>
+                        <div class="param-value">7.90</div>
+                        <div class="param-label">pH Level</div>
+                        <div class="param-ideal">Ideal: 7.5 – 8.5 (Auto pH Dosing)</div>
+                    </div>
+
+                    <div class="param-card">
+                        <div class="param-header">
+                            <span>🌡️ DS18B20 Probe</span>
+                            <span class="badge-normal"><span class="dot white-dot"></span> <span class="param-status">Normal (28 – 32 °C)</span></span>
+                        </div>
+                        <div class="param-value">29.4<span>°C</span></div>
+                        <div class="param-label">Temperature</div>
+                        <div class="param-ideal">Ideal: 28 – 32 °C</div>
+                    </div>
+                </div>
+
+                <div class="card chart-card">
+                    <div class="chart-header">
+                        <h3>Water Quality Trends — Live Telemetry</h3>
+                        <div class="chart-toggles">
+                            <button class="toggle-btn active" data-dataset="ph">pH Level</button>
+                            <button class="toggle-btn" data-dataset="temp">Temperature (°C)</button>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <canvas id="waterChart"></canvas>
+                    </div>
+
+                    <div class="custom-chart-legend">
+                        <div class="legend-item"><span class="legend-line green-line"></span> Ideal Min Threshold</div>
+                        <div class="legend-item"><span class="legend-line yellow-line"></span> Ideal Max Threshold</div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="dashboard-footer">
+                Smart AquaGuard — BS Computer Engineering Thesis • Colegio de Muntinlupa • Baldesco, Dela Cruz, Domingo
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('collapseBtn')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('collapsed');
+            localStorage.setItem('sidebarCollapsed', sidebar.classList.contains('collapsed'));
+        });
+        if (localStorage.getItem('sidebarCollapsed') === 'true') {
+            document.getElementById('sidebar')?.classList.add('collapsed');
+        }
+    </script>
+    <script src="water-quality.js"></script>
+</body>
+</html>
